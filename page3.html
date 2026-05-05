@@ -18,86 +18,148 @@ packages = ["numpy", "matplotlib"]
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: #122f1d;
+            color: #e9f3e9;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #15492d;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #e9f7e9 !important;
+        }
+
+        .nav-link.active {
+            color: #c8f7c5 !important;
+            font-weight: 600;
         }
 
         #mainb {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            height: calc(100vh - 56px);
+            min-height: calc(100vh - 112px);
+            padding: 40px 16px;
         }
 
         .main-container {
-            display: flex;
-            gap: 40px;
-            align-items: center;
+            display: grid;
+            grid-template-columns: minmax(320px, 420px) minmax(320px, 560px);
+            gap: 32px;
+            justify-content: center;
+            width: min(1120px, 100%);
         }
 
         .card {
-            padding: 30px;
-            border-radius: 15px;
-            width: 400px;
-            height: 500px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background: white;
+            padding: 32px;
+            border-radius: 26px;
+            width: 100%;
+            min-height: 520px;
+            box-shadow: 0 18px 36px rgba(45, 95, 53, 0.12);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(72, 124, 76, 0.16);
         }
 
         .card h2 {
             text-align: center;
-            color: #2a5298;
+            color: #10431f;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
-            margin-top: 15px;
-            font-weight: bold;
+            margin-top: 18px;
+            font-weight: 700;
+            color: #1b4a23;
         }
 
         select, input {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: none;
+            padding: 14px 16px;
+            margin-top: 10px;
+            border-radius: 14px;
+            border: 1px solid rgba(19, 72, 34, 0.28);
+            background: #f2fcf2;
+            color: #11331d;
+            outline: none;
         }
 
         button {
             width: 100%;
-            padding: 10px;
-            margin-top: 15px;
-            background: #2a5298;
+            padding: 15px;
+            margin-top: 26px;
+            background: #5c946b;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 14px;
             cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
         button:hover {
-            background: #376ecd;
+            background: #4d845f;
+            transform: translateY(-1px);
         }
 
         #signed {
-            margin-top: 10px;
+            margin-top: 18px;
             text-align: center;
             font-weight: bold;
-            color: #2a5298;
+            color: #1a4c27;
         }
 
         .graph {
-            border-radius: 8px;
-            width: 500px;
-            height: 500px;
+            border-radius: 26px;
+            width: 100%;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(19, 72, 34, 0.18);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+            padding: 30px;
+            color: #174223;
         }
 
-        nav {
-            background-color:#17366c;
+        .graph h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #153b28;
+        }
+
+        .graph p {
+            max-width: 420px;
+            color: #2f563d;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        footer {
+            padding: 20px 0 26px;
         }
 
         #footertext {
             text-align: center;
-            color:white;
+            color: white;
             font-family: 'Times New Roman', Times, serif;
+        }
+
+        @media (max-width: 920px) {
+            .main-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card, .graph {
+                min-height: auto;
+            }
         }
     </style>
 </head>

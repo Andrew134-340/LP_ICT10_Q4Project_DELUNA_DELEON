@@ -3,53 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>10-Emerald Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
 </head>
 <style>
-    img {
-        height: 365px;
-        width: 300px;
-    }
-    nav {
-        background-color:#17366c;
-    }
-    h1 {
-        margin: 23px;
-    }
-    #footertext {
-        font-family: 'Times New Roman', Times, serif;
-    }
     body {
         font-family: 'Roboto', sans-serif;
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        color: #f8f9fa;
+        background: #0f321b;
+        color: #e9f3e9;
         text-align: center;
+        min-height: 100vh;
     }
-    .column {
-        float: left;
-        width: 33.33%;
-        padding: 10px;
+
+    nav {
+        background-color: #133e23;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
     }
+
+    .navbar-brand, .nav-link {
+        color: #e8f5e9 !important;
+    }
+
+    .nav-link.active {
+        color: #c8f7c5 !important;
+        font-weight: 600;
+    }
+
+    h1 {
+        margin: 30px 0 10px;
+        font-size: 2.5rem;
+        color: #ffffff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+    }
+
+    .gallery-hero {
+        max-width: 760px;
+        margin: 0 auto 28px;
+        padding: 14px 18px;
+        background: rgba(230, 245, 235, 0.14);
+        border-radius: 999px;
+        border: 1px solid rgba(232, 245, 233, 0.28);
+        color: #dcedc8;
+    }
+
     .row {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-    .row::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-    #images {
-        background-color: white;
-        color: black;
-        border-radius: 8px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        max-width: 1200px;
+        margin: 10px auto 40px;
+        padding: 0 16px;
     }
 
+    .column {
+        display: flex;
+        justify-content: center;
+    }
 
+    #images, .gallery-card {
+        background: rgba(248, 255, 247, 0.96);
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+        color: #1a432a;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    #images img,
+    .gallery-card img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+    }
+
+    .gallery-card h4,
+    #images h4 {
+        margin: 16px 16px 8px;
+        color: #14632a;
+    }
+
+    .gallery-card p,
+    #images p {
+        margin: 0 16px 18px;
+        color: #2e4c34;
+        line-height: 1.5;
+    }
+
+    footer {
+        padding: 18px 0 30px;
+    }
+
+    #footertext {
+        font-family: 'Times New Roman', Times, serif;
+        color: #e8f5e9;
+        font-size: 0.95rem;
+    }
 </style>
 <body>
    <nav class="navbar navbar-expand-lg navbar-dark" style="font-weight: bold;">
@@ -72,24 +125,25 @@
     </nav>
 
     <h1>Highlights of S.Y. 2025-2026</h1>
+    <p class="gallery-hero">Browse important class memories from the 2025-2026 school year.</p>
     <div class="row">
         <div class="column">
             <div id="images">
-                <img src="CAT.jpg" alt="second" style="width: 100%;">
+                <img src="CAT.png" alt="CAT Graduation">
                 <h4>CAT Graduation</h4>
                 <p>10-Emerald finally graduates...</p>
             </div>
         </div>
         <div class="column">
             <div id="images">
-                <img src="Camp.png" alt="third" style="width: 100%;">
+                <img src="Camp.png" alt="JHS Camp-Out">
                 <h4>JHS Camp-Out</h4>
                 <p>10-Emerald students and Grade 6 work together!</p>
             </div>
         </div>
         <div class="column">
             <div id="images">
-                <img src="ClassPicture.png" alt="first" style="width: 100%;">
+                <img src="ClassPicture.png" alt="Class Picture">
                 <h4>Class Picture</h4>
                 <p>So cool... wow.</p>
             </div>
@@ -98,21 +152,21 @@
     <div class="row">
         <div class="column">
             <div id="images">
-                <img src="Speech.png" alt="second" style="width: 100%;">
+                <img src="Speech.png" alt="Sabayang Pagbigkas">
                 <h4>Sabayang Pagbigkas</h4>
                 <p>10-Emerald holds their Speech Choirs!</p>
             </div>
         </div>
         <div class="column">
             <div id="images">
-                <img src="Teachersday.png" alt="third" style="width: 100%;">
+                <img src="Teachersday.png" alt="Teacher's Day">
                 <h4>Teacher's Day</h4>
                 <p>Teacher's Day Celebration with 10-E with Ms. Simbajon!!!!</p>
             </div>
         </div>
         <div class="column">
             <div id="images">
-                <img src="Congress.png" alt="first" style="width: 100%;">
+                <img src="Congress.png" alt="Peace Congress">
                 <h4>Peace Congress</h4>
                 <p>Nothing of note happened, but it was fun!</p>
             </div>
